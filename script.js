@@ -7,7 +7,18 @@ let isPaused = true;
 
 // start the timer
 function startTimer() {
-
+  if (isPaused) {
+    isPaused = false;
+    timerInterval = setInterval(() => {
+      if (timer > 0) {
+        timer--;
+        updateTimerDisplay();
+      } else {
+        clearInterval(timerInterval);
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
 }
 
 // pause the timer
