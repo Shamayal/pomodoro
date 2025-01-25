@@ -1,19 +1,6 @@
-.timer-container {
-  background-color: maroon;
+* {
+  background-color: #BA4849;
 }
-
-.circle {
-  background-color: navy;
-}
-
-h1 {
+header h1 {
   color: white;
-}
-
-p {
-  color: black;
-}
-
-button {
-  size: large;
 }
