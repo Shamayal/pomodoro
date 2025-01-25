@@ -1,55 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pomodoro</title>
-
-    <!-- Fonts -->
-
-    <!-- Icons -->
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <section>
-      <div class="timer-container">
-        <h1>Pomodoro</h1>
-        <div class="session">
-          <p id="study">Study</p>
-          <p id="break">Break</p>
-        </div>
-
-        <div class="timer">
-          <div class="circle">
-            <div class="time">
-              <p id="minutes"></p>
-              <p>:</p>
-              <p id="seconds"></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pomodoro Timer</h1>
+        </header>
+        <main>
+            <div class="timer-controls">
+                <button id="pomodoro">Pomodoro</button>
+                <button id="short-break">Short Break</button>
+                <button id="long-break">Long Break</button>
             </div>
-          </div>
-        </div>
-
-        <div class="controls">
-          <button id="start" onclick="start()"></button>
-        </div>
-      </div>
-    </section>
-    <!-- <div class="timer-container">
-      <h1>Pomodoro Timer</h1>
-      25 minutes
-      <h1>Short Break</h1>
-      5 minutes
-      <h1>Long Break</h1>
-      15 minutes
-      <h1>25:00</h1>
+            <div class="timer-display">
+                <h2 id="time">25:00</h2>
+                <button id="start">Start</button>
+                <button id="pause">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="tasks">
+                <h3>Tasks</h3>
+                <ul id="task-list"></ul>
+                <div class="task-input">
+                    <input type="text" id="task-input" placeholder="Add a task">
+                    <button id="add-task">Add</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Pomodoro App - Made with ❤️</p>
+        </footer>
     </div>
-    <div id="control-btns">
-      <button id="start-btn" onclick="startTimer()">Start</button>
-      <button id="pause-btn" onclick="pauseTimer()">Pause</button>
-      <button id="restart-btn" onclick="restartTimer()">Restart</button>
-    </div> -->
-    <script src="./script.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
