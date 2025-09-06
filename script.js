@@ -9,8 +9,13 @@ const timerDisplay = document.querySelector(".timer");
 let countdown;
 let pomodoroTime = 25;
 let timeLeft = pomodoroTime * 60;
+let timerRunning = false;
 
 function startTimer() {
+  if (!timerRunning) {
+    timerRunning = true;
+    start.textContent = "Pause";
+  }
   countdown = setInterval(() => {
     if (timeLeft <= 0) {
       timerDisplay.textContent = "00:00";
