@@ -1,34 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pomodoro</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <button id="settings">Settings</button>
-  <h1 class="title">Pomodoro</h1>
-  <div>
-    <button id="pomodoro">Pomodoro</button>
-    <button id="short-break">Short Break</button>
-    <button id="long-break">Long Break</button>
-  </div>
-  <h2 class="timer">25:00</h2>
-  <div>
-    <button id="start">Start</button>
-  </div>
-  <!-- Settings Modal -->
-   <div>
-    <h2>Settings</h2>
-    <label>Time (minutes)</label>
-     <input type="number" id="pomodoro-length" value="25" min="1" max="60"> minutes
-     <input type="number" id="short-length" value="25" min="1" max="60"> minutes
-     <input type="number" id="long-length" value="25" min="1" max="60"> minutes
-     <br>
-    <label>Dark Mode:</label>
-    <input type="checkbox" id="dark-mode">
-   </div>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="pomodoro">
+      <!-- Top Bar -->
+      <header class="top-bar">
+        <button id="settings">Settings</button>
+        <h1>Pomodoro</h1>
+      </header>
+      <!-- Timer Section -->
+      <main class="timer-section">
+        <div class="mode-buttons">
+          <button id="pomodoro">Pomodoro</button>
+          <button id="short-break">Short Break</button>
+          <button id="long-break">Long Break</button>
+        </div>
+
+        <h2 class="timer">25:00</h2>
+
+        <div class="controls">
+          <button id="start">Start</button>
+        </div>
+      </main>
+
+      <!-- Settings Modal -->
+      <section class="settings-panel">
+        <h2>Settings</h2>
+        <div class="setting">
+          <label>
+            Pomodoro Length
+            <input
+              type="number"
+              id="pomodoro-length"
+              value="25"
+              min="1"
+              max="60"
+            />
+            minutes
+          </label>
+        </div>
+        <div class="setting">
+          <label>
+            Short Break
+            <input type="number" id="short-length" value="5" min="1" max="60" />
+            minutes
+          </label>
+        </div>
+        <div class="setting">
+          <label>
+            Long Break
+            <input type="number" id="long-length" value="15" min="1" max="60" />
+            minutes
+          </label>
+        </div>
+        <div class="setting">
+          <label>
+            Dark Mode:
+            <input type="checkbox" id="dark-mode" />
+          </label>
+        </div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
