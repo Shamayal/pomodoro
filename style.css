@@ -15,3 +15,22 @@ body {
   color: white;
   text-align: center;
 }
+
+/* Title */
+title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.mode-buttons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
