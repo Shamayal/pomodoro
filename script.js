@@ -3,14 +3,13 @@ const pomodoro = document.getElementById("pomodoro");
 const shortBreak = document.getElementById("short-break");
 const longBreak = document.getElementById("long-break");
 const start = document.getElementById("start");
-const pause = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
 
 let countdown;
-let pomodoroTime = 25;
-let timeLeft = pomodoroTime * 60;
+let timeLeft;
 let timerRunning = false;
 
+// Start/Pause Toggle
 function toggleTimer() {
   if (!timerRunning) {
     timerRunning = true;
@@ -42,4 +41,32 @@ function toggleTimer() {
   }
 }
 
+// Short Break - 5 Minutes
+pomodoro.addEventListener("click", () => {
+  clearInterval(countdown);
+  timerRunning = false;
+  start.textContent = "Start";
+  timeLeft = 25 * 60;
+  timerDisplay.textContent = "25:00";
+})
+
+// Short Break - 5 Minutes
+shortBreak.addEventListener("click", () => {
+  clearInterval(countdown);
+  timerRunning = false;
+  start.textContent = "Start";
+  timeLeft = 5 * 60;
+  timerDisplay.textContent = "05:00";
+})
+
+// Short Break - 5 Minutes
+longBreak.addEventListener("click", () => {
+  clearInterval(countdown);
+  timerRunning = false;
+  start.textContent = "Start";
+  timeLeft = 15 * 60;
+  timerDisplay.textContent = "15:00";
+})
+
+// Start Button
 start.addEventListener("click", toggleTimer);
