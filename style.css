@@ -34,3 +34,15 @@ title {
   cursor: pointer;
   transition: background 0.2s ease;
 }
+
+/* Hover Effect */
+.mode-buttons button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Timer */
+.timer {
+  font-size: 5rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
