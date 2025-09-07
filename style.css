@@ -46,3 +46,16 @@ title {
   font-weight: bold;
   margin: 1.5rem 0;
 }
+
+/* Start button */
+#start {
+  background-color: white;
+  color: #b53131;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
