@@ -49,7 +49,7 @@ function setMode(minutes, mode, activeButton) {
   clearInterval(countdown);
   timerRunning = false;
   start.textContent = "Start";
-  timeleft = minutes * 60;
+  timeLeft = minutes * 60;
 
   // Change Time Display
   const mins = minutes.toString().padStart(2, "0");
