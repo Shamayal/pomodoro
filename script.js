@@ -9,6 +9,10 @@ let countdown;
 let timeLeft = 25 * 60;
 let timerRunning = false;
 
+timerDisplay.textContent = "25:00";
+document.body.className = "pomodoro";
+pomodoro.classList.add("active");
+
 // Start/Pause Toggle
 function toggleTimer() {
   if (!timerRunning) {
