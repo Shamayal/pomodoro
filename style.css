@@ -11,7 +11,6 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #b53131;
   color: white;
   text-align: center;
 }
@@ -58,4 +57,30 @@ title {
   border: none;
   cursor: pointer;
   transition: opacity 0.2s;
+}
+
+/* Active Button States */
+body.pomodoro .mode-buttons button.active {
+  background-color: #c14440;
+}
+
+body.short .mode-buttons button.active {
+  background-color: #3b7c80;
+}
+
+body.long .mode-buttons button.active {
+  background-color: #366587;
+}
+
+/* Background Colour Change */
+body.pomodoro {
+  background-color: #d95550;
+}
+
+body.short {
+  background-color: #4c9195;
+}
+
+body.long {
+  background-color: #457ca3;
 }
