@@ -162,3 +162,7 @@ body.short .top-bar button {
 body.long .top-bar button {
   background-color: #5a8ebd;
 }
+
+.hidden {
+  display: none;
+}
