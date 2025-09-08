@@ -49,7 +49,7 @@ title {
 /* Start button */
 #start {
   background-color: white;
-  color: #b53131;
+  /* color: #d95550; */
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.8rem 2rem;
@@ -83,4 +83,16 @@ body.short {
 
 body.long {
   background-color: #457ca3;
+}
+
+body.pomodoro #start {
+  color: #d95550;
+}
+
+body.short #start {
+  color: #4c9195;
+}
+
+body.long #start {
+  color: #457ca3;
 }
