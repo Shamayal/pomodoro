@@ -1,4 +1,5 @@
-const settings = document.getElementById("settings");
+const settingsButton = document.getElementById("settings");
+const settingsModal = document.getElementById("settings-modal");
 const pomodoro = document.getElementById("pomodoro");
 const shortBreak = document.getElementById("short-break");
 const longBreak = document.getElementById("long-break");

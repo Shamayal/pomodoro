@@ -29,7 +29,7 @@
       </main>
 
       <!-- Settings Modal -->
-      <section class="settings-panel hidden"">
+      <div id="settings-modal" class="hidden">
         <h2>Settings</h2>
         <div class="setting">
           <label>
@@ -44,21 +44,21 @@
             minutes
           </label>
         </div>
-        <div class="setting">
+        <div>
           <label>
             Short Break
             <input type="number" id="short-length" value="5" min="1" max="60" />
             minutes
           </label>
         </div>
-        <div class="setting">
+        <div>
           <label>
             Long Break
             <input type="number" id="long-length" value="15" min="1" max="60" />
             minutes
           </label>
         </div>
-        <div class="setting">
+        <div>
           <label>
             Dark Mode:
             <input type="checkbox" id="dark-mode" />
