@@ -96,3 +96,33 @@ body.short #start {
 body.long #start {
   color: #457ca3;
 }
+
+/* Timer Card Background Colors by Mode */
+.timer-section {
+  padding: 30px;
+  border-radius: 12px;
+}
+
+body.pomodoro .timer-section {
+  background-color: #d95550;
+}
+
+body.short .timer-section {
+  background-color: #4c9195;
+}
+
+body.long .timer-section {
+  background-color: #457ca3;
+}
+
+body.pomodoro .timer-section {
+  background-color: #e27c78;
+}
+
+body.short .timer-section {
+  background-color: #71b0b4;
+}
+
+body.long .timer-section {
+  background-color: #5a8ebd;
+}
