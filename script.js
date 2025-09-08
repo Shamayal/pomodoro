@@ -6,7 +6,7 @@ const start = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
 
 let countdown;
-let timeLeft;
+let timeLeft = 25 * 60;
 let timerRunning = false;
 
 // Start/Pause Toggle
@@ -41,7 +41,7 @@ function toggleTimer() {
   }
 }
 
-// Short Break - 5 Minutes
+// Pomodoro - 25 Minutes
 pomodoro.addEventListener("click", () => {
   clearInterval(countdown);
   timerRunning = false;
@@ -59,7 +59,7 @@ shortBreak.addEventListener("click", () => {
   timerDisplay.textContent = "05:00";
 })
 
-// Short Break - 5 Minutes
+// Long Break - 15 Minutes
 longBreak.addEventListener("click", () => {
   clearInterval(countdown);
   timerRunning = false;
