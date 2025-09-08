@@ -45,32 +45,35 @@ function toggleTimer() {
   }
 }
 
-// Pomodoro - 25 Minutes
-pomodoro.addEventListener("click", () => {
+function setMode(minutes, mode, activeButton) {
   clearInterval(countdown);
   timerRunning = false;
   start.textContent = "Start";
-  timeLeft = 25 * 60;
-  timerDisplay.textContent = "25:00";
-})
+  timeleft = minutes * 60;
+
+  // Change Time Display
+  const mins = minutes.toString().padStart(2, "0");
+  timerDisplay.textContent = `${mins}:00`;
+
+  // Change background
+  document.body.className = mode;
+
+  // Reset active button styles
+  document.querySelectorAll(".mode-buttons button").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  activeButton.classList.add("active");
+}
+
+// Pomodoro - 25 Minutes
+pomodoro.addEventListener("click", () => setMode(25, "pomodoro", pomodoro));
 
 // Short Break - 5 Minutes
-shortBreak.addEventListener("click", () => {
-  clearInterval(countdown);
-  timerRunning = false;
-  start.textContent = "Start";
-  timeLeft = 5 * 60;
-  timerDisplay.textContent = "05:00";
-})
+shortBreak.addEventListener("click", () => setMode(5, "short", shortBreak));
 
 // Long Break - 15 Minutes
-longBreak.addEventListener("click", () => {
-  clearInterval(countdown);
-  timerRunning = false;
-  start.textContent = "Start";
-  timeLeft = 15 * 60;
-  timerDisplay.textContent = "15:00";
-})
+longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
 
 // Start Button
 start.addEventListener("click", toggleTimer);
