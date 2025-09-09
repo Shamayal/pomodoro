@@ -166,3 +166,11 @@ body.long .top-bar button {
 .hidden {
   display: none;
 }
+
+/* Progress Bar Container */
+.progress-bar-container {
+  width: 100%;
+  background-color: white;
+  height: 6px;
+  overflow: hidden;
+}
