@@ -175,7 +175,7 @@ body.long .top-bar button {
   overflow: hidden;
   margin-top: 0;
   margin-bottom: 1.5rem;
-
+  border-radius: 4px;
 }
 
 /* Progress Bar */
@@ -184,4 +184,5 @@ body.long .top-bar button {
   width: 0%;
   background-color: #065a09;
   transition: width 1s linear;
+  border-radius: 4px 0 0 4px;
 } 
