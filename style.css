@@ -179,10 +179,10 @@ body.long .top-bar button {
 }
 
 /* Progress Bar */
-.progress-bar {
+#progress-bar {
   height: 100%;
   width: 0%;
-  background-color: #065a09;
+  background-color: #32be37;
   transition: width 1s linear;
   border-radius: 4px 0 0 4px;
 } 
