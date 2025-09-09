@@ -174,3 +174,11 @@ body.long .top-bar button {
   height: 6px;
   overflow: hidden;
 }
+
+/* Progress Bar */
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #065a09;
+  transition: width 1s linear;
+} 
