@@ -5,6 +5,7 @@ const shortBreak = document.getElementById("short-break");
 const longBreak = document.getElementById("long-break");
 const start = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
+const progressBar = document.getElementById("progress-bar");
 
 let countdown;
 let timeLeft = 25 * 60;
@@ -78,3 +79,8 @@ longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
 
 // Start Button
 start.addEventListener("click", toggleTimer);
+
+function updateProgressBar() {
+  const percent = ((totalTime - timeLeft) / totalTime) * 100;
+  progressBar.style.width = `${percent}%`;
+}
