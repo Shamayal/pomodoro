@@ -9,6 +9,7 @@ const progressBar = document.getElementById("progress-bar");
 
 let countdown;
 let timeLeft = 25 * 60;
+let totalTime = 25 * 60;
 let timerRunning = false;
 
 timerDisplay.textContent = "25:00";
@@ -24,10 +25,11 @@ function toggleTimer() {
     countdown = setInterval(() => {
       if (timeLeft <= 0) {
         clearInterval(countdown);
-        timerDisplay.textContent = "00:00";
-        alert("Time's up!");
         timerRunning = false;
+        timerDisplay.textContent = "00:00";
         start.textContent = "Start";
+        updateProgressBar();
+        alert("Time's up!");
         return;
       }
 
@@ -39,6 +41,8 @@ function toggleTimer() {
       timerDisplay.textContent = `${minutes
         .toString()
         .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+        updateProgressBar();
     }, 1000);
   } else {
     clearInterval(countdown);
@@ -51,11 +55,17 @@ function setMode(minutes, mode, activeButton) {
   clearInterval(countdown);
   timerRunning = false;
   start.textContent = "Start";
+
+  // Set time
   timeLeft = minutes * 60;
+  totalTime = minutes * 60;
 
   // Change Time Display
   const mins = minutes.toString().padStart(2, "0");
   timerDisplay.textContent = `${mins}:00`;
+
+  // Reset progress bar
+  updateProgressBar();
 
   // Change background
   document.body.className = mode;
@@ -66,6 +76,12 @@ function setMode(minutes, mode, activeButton) {
   });
 
   activeButton.classList.add("active");
+}
+
+// Progress Bar Update
+function updateProgressBar() {
+  const percent = ((totalTime - timeLeft) / totalTime) * 100;
+  progressBar.style.width = `${percent}%`;
 }
 
 // Pomodoro - 25 Minutes
@@ -79,8 +95,3 @@ longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
 
 // Start Button
 start.addEventListener("click", toggleTimer);
-
-function updateProgressBar() {
-  const percent = ((totalTime - timeLeft) / totalTime) * 100;
-  progressBar.style.width = `${percent}%`;
-}
