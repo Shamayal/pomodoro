@@ -161,6 +161,10 @@ body.long .timer-section {
   gap: 0.4rem; 
 }
 
+.top-bar-buttons {
+  display: flex;
+}
+
 body.pomodoro .top-bar button {
   background-color: #e27c78;
 }
