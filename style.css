@@ -101,6 +101,7 @@ body.long #start {
 .timer-section {
   padding: 30px;
   border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 body.pomodoro .timer-section {
@@ -145,6 +146,9 @@ body.long .timer-section {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; 
 }
 
 .top-bar button:hover {
