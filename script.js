@@ -6,6 +6,9 @@ const longBreak = document.getElementById("long-break");
 const start = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
 const progressBar = document.getElementById("progress-bar");
+// sound
+const clickSound = new Audio('sounds/click.mp3');
+const alarmSound = new Audio('sounds/alarm.mp3');
 
 let countdown;
 let timeLeft = 25 * 60;
