@@ -10,6 +10,8 @@ const progressBar = document.getElementById("progress-bar");
 const clickSound = new Audio('sounds/click.wav');
 const modeSound = new Audio('sounds/mode.wav');
 const alarmSound = new Audio('sounds/alarm.wav');
+// dark mode
+const darkModeToggleBtn = document.getElementById("dark-mode-toggle");
 
 let countdown;
 let timeLeft = 25 * 60;
@@ -112,3 +114,9 @@ start.addEventListener("click", toggleTimer);
     modeSound.play();
   });
 });
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+}
+
+darkModeToggleBtn.addEventListener("click", toggleDarkMode);
