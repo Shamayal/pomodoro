@@ -7,8 +7,9 @@ const start = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
 const progressBar = document.getElementById("progress-bar");
 // sound
-const clickSound = new Audio('sounds/click.mp3');
-const alarmSound = new Audio('sounds/alarm.mp3');
+const clickSound = new Audio('sounds/click.wav');
+const modeSound = new Audio('sounds/mode.wav');
+const alarmSound = new Audio('sounds/alarm.wav');
 
 let countdown;
 let timeLeft = 25 * 60;
@@ -32,6 +33,7 @@ function toggleTimer() {
         timerDisplay.textContent = "00:00";
         start.textContent = "Start";
         updateProgressBar();
+        alarmSound.play();
         alert("Time's up!");
         return;
       }
@@ -98,3 +100,15 @@ longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
 
 // Start Button
 start.addEventListener("click", toggleTimer);
+
+[start].forEach(button => {
+  button.addEventListener("click", () => {
+    clickSound.play();
+  });
+});
+
+[pomodoro, shortBreak, longBreak].forEach(button => {
+  button.addEventListener("click", () => {
+    modeSound.play();
+  });
+});
