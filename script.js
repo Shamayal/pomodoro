@@ -116,6 +116,7 @@ start.addEventListener("click", toggleTimer);
 });
 
 function toggleDarkMode() {
+  document.body.classList.remove("pomodoro", "short", "long");
   document.body.classList.toggle("dark-mode");
 
   const isDark = document.body.classList.contains("dark-mode");
