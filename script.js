@@ -27,14 +27,15 @@ pomodoro.classList.add("active");
 function toggleTimer() {
   if (!timerRunning) {
     timerRunning = true;
-    start.textContent = "Pause";
+    //start.textContent = "Pause";
+    start.innerHTML = 'Pause <i class="fa-solid fa-pause"></i>';
 
     countdown = setInterval(() => {
       if (timeLeft <= 0) {
         clearInterval(countdown);
         timerRunning = false;
         timerDisplay.textContent = "00:00";
-        start.textContent = "Start";
+        start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
         updateProgressBar();
         alarmSound.play();
         alert("Time's up!");
@@ -55,14 +56,14 @@ function toggleTimer() {
   } else {
     clearInterval(countdown);
     timerRunning = false;
-    start.textContent = "Start";
+    start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
   }
 }
 
 function setMode(minutes, mode, activeButton) {
   clearInterval(countdown);
   timerRunning = false;
-  start.textContent = "Start";
+  start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
 
   // Set time
   timeLeft = minutes * 60;
