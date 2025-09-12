@@ -206,3 +206,39 @@ body.long .top-bar button {
   transition: width 1s linear;
   border-radius: 4px 0 0 4px;
 } 
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .timer-section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .top-bar button {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+.dark-mode .mode-buttons button {
+  color: #f5f5f5;
+}
+
+.dark-mode .mode-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode #start {
+  background-color: #f5f5f5;
+  color: #121212;
+}
+
+.dark-mode .progress-bar-container {
+  background-color: #333;
+}
+
+.dark-mode #progress-bar {
+  background-color: #4caf50;
+}
