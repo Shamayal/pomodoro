@@ -17,6 +17,7 @@ let countdown;
 let timeLeft = 25 * 60;
 let totalTime = 25 * 60;
 let timerRunning = false;
+let currentMode = "pomodoro"; // default mode
 
 timerDisplay.textContent = "25:00";
 document.body.className = "pomodoro";
@@ -74,8 +75,13 @@ function setMode(minutes, mode, activeButton) {
   // Reset progress bar
   updateProgressBar();
 
-  // Change background
-  document.body.className = mode;
+  // Save current mode
+  currentMode = mode;
+
+  // Change background if not dark mode
+  if (!document.body.classList.contains("dark-mode")) {
+    document.body.className = mode;
+  }
 
   // Reset active button styles
   document.querySelectorAll(".mode-buttons button").forEach(btn => {
@@ -103,6 +109,7 @@ longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
 // Start Button
 start.addEventListener("click", toggleTimer);
 
+// Sounds
 [start].forEach(button => {
   button.addEventListener("click", () => {
     clickSound.play();
@@ -115,8 +122,8 @@ start.addEventListener("click", toggleTimer);
   });
 });
 
+// Dark Mode
 function toggleDarkMode() {
-  document.body.classList.remove("pomodoro", "short", "long");
   document.body.classList.toggle("dark-mode");
 
   const isDark = document.body.classList.contains("dark-mode");
@@ -124,6 +131,12 @@ function toggleDarkMode() {
   darkModeToggleBtn.innerHTML = isDark
     ? '<i class="fa-solid fa-sun" style="color: #FFD43B;"></i> Light Mode'
     : '<i class="fa-solid fa-moon" style="color: #234b90;"></i> Dark Mode';
+
+  if (isDark) {
+    document.body.classList.remove("pomodoro", "short", "long");
+  } else {
+    document.body.className = currentMode;
+  }
 }
 
 darkModeToggleBtn.addEventListener("click", toggleDarkMode);
