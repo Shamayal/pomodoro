@@ -12,6 +12,9 @@ const modeSound = new Audio('sounds/mode.wav');
 const alarmSound = new Audio('sounds/alarm.wav');
 // dark mode
 const darkModeToggleBtn = document.getElementById("dark-mode-toggle");
+// settings modal
+const closeSettingsBtn = document.getElementById("close-settings");
+const modalBackdrop = document.getElementById("modal-backdrop");
 
 let countdown;
 let timeLeft = 25 * 60;
@@ -141,3 +144,9 @@ function toggleDarkMode() {
 }
 
 darkModeToggleBtn.addEventListener("click", toggleDarkMode);
+
+// Open Settings Modal
+settingsButton.addEventListener("click", () => {
+  settingsModal.classList.remove("hidden");
+  modalBackdrop.classList.remove("hidden");
+});
