@@ -155,3 +155,9 @@ closeSettingsBtn.addEventListener("click", () => {
   settingsModal.classList.add("hidden");
   modalBackdrop.classList.add("hidden");
 });
+
+// Click outside modal to close
+modalBackdrop.addEventListener("click", () => {
+  settingsModal.classList.add("hidden");
+  modalBackdrop.classList.add("hidden");
+});
