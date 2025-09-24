@@ -150,3 +150,8 @@ settingsButton.addEventListener("click", () => {
   settingsModal.classList.remove("hidden");
   modalBackdrop.classList.remove("hidden");
 });
+
+closeSettingsBtn.addEventListener("click", () => {
+  settingsModal.classList.add("hidden");
+  modalBackdrop.classList.add("hidden");
+});
