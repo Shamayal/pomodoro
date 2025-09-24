@@ -265,7 +265,7 @@ body.long .top-bar button {
 
 /* Dark mode modal styles */
 .dark-mode .modal {
-  background: #222;
+  background: #333;
   color: white;
 }
 
