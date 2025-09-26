@@ -38,6 +38,7 @@
 
       <!-- Settings Modal -->
       <div id="settings-modal" class="modal hidden">
+        <button id="close-settings">x</button>
         <h2>Settings</h2>
         <div>
           <label>
@@ -61,31 +62,16 @@
             minutes
           </label>
         </div>
-        <button id="close-settings">x</button>
-        <div>
+        <div class="sound-toggle">
           <label for="sound-toggle">
-          <input type="checkbox" id="sound-toggle" checked />Enable Sound
-          <i class="fa-solid fa-volume-xmark"></i>
-          <i class="fa-solid fa-volume-high"></i>
+            <button id="sound-toggle-btn">
+              Sound Off <i class="fa-solid fa-volume-xmark"></i>
+              Sound On <i class="fa-solid fa-volume-high"></i>
+            </button>
           </label>
         </div>
-        <div class="setting sound-toggle">
-  <!-- <label for="sound-toggle">
-    <input type="checkbox" id="sound-toggle" checked />
-    Enable Sound
-    <i class="fa-solid fa-volume-xmark icon-muted"></i>
-    <i class="fa-solid fa-volume-high icon-unmuted"></i>
-  </label> -->
-  <div class="setting sound-toggle">
-  <label>Sound</label>
-  <button id="sound-toggle-btn" aria-label="Toggle sound">
-    <i class="fa-solid fa-volume-high"></i>
-  </button>
-</div>
+      </div>
 
-</div>
-
-    </div>
     <div id="modal-backdrop" class="hidden"></div>
     <script src="script.js"></script>
   </body>
