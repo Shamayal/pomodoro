@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Notification permission:", permission);
         if (permission === "granted") {
           new Notification("✅ Notifications enabled!", {
-            body: "You'll now get timer alerts."
+            body: "You'll now get timer alerts.",
+            icon: "favicon.ico"
           });
         } else {
           console.warn("Notifications not allowed:", permission);
@@ -45,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
 function showNotification(title, body) {
   if ("Notification" in window && Notification.permission === "granted") {
     new Notification(title, {
-      body: body
+      body: body,
+      icon: "favicon.ico"
     });
   } else {
     console.warn("No permission to show notification:", Notification.permission);
