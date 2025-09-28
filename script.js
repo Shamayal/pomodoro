@@ -145,10 +145,24 @@ shortBreak.addEventListener("click", () => {
   setMode(minutes, "short", shortBreak);
 });
 
+shortInput.addEventListener("change", () => {
+  if (currentMode === "short") {
+    const minutes = parseInt(shortInput.value);
+    setMode(minutes, "short", shortBreak);
+  }
+});
+
 // Long Break - 15 Minutes Default
 longBreak.addEventListener("click", () => {
   const minutes = parseInt(longInput.value);
   setMode(minutes, "long", longBreak);
+});
+
+longInput.addEventListener("change", () => {
+  if (currentMode === "long") {
+    const minutes = parseInt(longInput.value);
+    setMode(minutes, "long", longBreak);
+  } 
 });
 
 // Start Button
