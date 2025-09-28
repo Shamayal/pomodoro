@@ -221,17 +221,19 @@ modalBackdrop.addEventListener("click", () => {
 });
 
 // Function to enforce timer range
-function timerInput(minInput, min, max) {
-  minInput.addEventListener("input", () => {
-    const value = parseInt(minInput.value);
+function timerInput(minutesInput, min, max) {
+  minutesInput.addEventListener("input", () => {
+    const value = parseInt(minutesInput.value);
 
     // If the input is not a number, skip
     if (isNaN(value)) return;
 
     if (value < min) {
-      minInput.value = min;
+      minutesInput.value = min;
     } else if (value > max) {
-      minInput.value = max;
+      minutesInput.value = max;
+    } else {
+      minutesInput.value = Math.floor(value);
     }
   });
 }
@@ -251,4 +253,6 @@ function updateSoundButton() {
 enableSoundBtn.addEventListener("click", () => {
   soundOn = !soundOn;
   updateSoundButton();
-})
+});
+
+updateSoundButton();
