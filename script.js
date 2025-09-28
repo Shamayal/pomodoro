@@ -36,8 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function showNotification(title, body) {
   if (Notification.permission === "granted") {
     new Notification(title, {
-      body: body, 
-      icon: "favicon.ico",
+      body: body
     });
   }
 }
@@ -45,8 +44,7 @@ function showNotification(title, body) {
 Notification.requestPermission().then(permission => {
   if (permission === "granted") {
     new Notification("✅ It works!", {
-      body: "Notifications are enabled.",
-      icon: "https://via.placeholder.com/64"
+      body: "Notifications are enabled."
     });
   } else {
     console.log("Notifications denied or dismissed:", permission);
