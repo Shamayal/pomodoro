@@ -255,6 +255,16 @@ body {
 }
 
 /* Settings */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
 .modal {
   position: fixed;
   top: 50%;
@@ -278,7 +288,7 @@ body {
   text-align: center;
 }
 
-.modal label {
+.modal .setting-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -289,10 +299,53 @@ body {
   font-size: 0.95rem;
 }
 
-/* Dark mode modal styles */
-.dark-mode .modal {
-  background: #333;
-  color: white;
+.modal input[type="number"] {
+  width: 60px;
+  padding: 0.4rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  background: white;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+}
+
+.modal input[type="number"]:focus {
+  box-shadow: 0 0 0 2px #457ca3;
+}
+
+/* Sound toggle */
+.sound-toggle {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+#sound-toggle-btn {
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Close button */
+#close-settings {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s ease;
+}
+
+#close-settings:hover {
+  color: #000;
 }
 
 /* Modal backdrop */
@@ -309,4 +362,37 @@ body {
 /* Hide by default */
 .hidden {
   display: none;
+}
+
+/* Settings - Dark Mode */
+.dark-mode .modal {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark-mode .input-group input[type="number"] {
+  background: #444;
+  color: white;
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input[type="number"]:focus {
+  box-shadow: 0 0 0 2px #5a8ebd;
+}
+
+.dark-mode #sound-toggle-btn {
+  color: white;
+}
+
+.dark-mode #close-settings {
+  color: #aaa;
+}
+
+.dark-mode #close-settings:hover {
+  color: white;
+}
+
+.dark-mode .setting-row {
+  background: #2c2c2c;
+  color: #ddd;
 }
