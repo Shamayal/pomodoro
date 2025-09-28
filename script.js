@@ -28,6 +28,24 @@ timerDisplay.textContent = "25:00";
 document.body.className = "pomodoro";
 pomodoro.classList.add("active");
 
+function formatTime(secondsLeft) {
+  const minutes = Math.floor(secondsLeft / 60);
+  const seconds = secondsLeft % 60;
+  return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+}
+
+function formatModeTitle(mode) {
+  switch (mode) {
+    case "pomodoro":
+      return "Pomodoro";
+    case "short":
+      return "Short Break";
+    case "long":
+      return "Long Break";
+  }
+}
+
+
 // Start/Pause Toggle
 function toggleTimer() {
   if (!timerRunning) {
@@ -50,12 +68,8 @@ function toggleTimer() {
 
       timeLeft--;
 
-      const minutes = Math.floor(timeLeft / 60);
-      const seconds = timeLeft % 60;
-
-      const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-      timerDisplay.textContent = formattedTime;
-      document.title = `${formattedTime} - Pomodoro`;
+      timerDisplay.textContent = formatTime(timeLeft);
+      document.title = `${formatTime(timeLeft)} - ${formatModeTitle(currentMode)}`;
 
       updateProgressBar();
     }, 1000);
