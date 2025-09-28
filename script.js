@@ -38,7 +38,8 @@ function toggleTimer() {
       if (timeLeft <= 0) {
         clearInterval(countdown);
         timerRunning = false;
-        timerDisplay.textContent = "00:00";
+        // timerDisplay.textContent = "00:00";
+        timeLeft = totalTime;
         document.title = "Time's up! - Pomodoro";
         start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
         updateProgressBar();
@@ -53,7 +54,6 @@ function toggleTimer() {
       const seconds = timeLeft % 60;
 
       const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-
       timerDisplay.textContent = formattedTime;
       document.title = `${formattedTime} - Pomodoro`;
 
@@ -108,7 +108,7 @@ function updateProgressBar() {
 pomodoro.addEventListener("click", () => setMode(25, "pomodoro", pomodoro));
 
 // Short Break - 5 Minutes
-shortBreak.addEventListener("click", () => setMode(5, "short", shortBreak));
+shortBreak.addEventListener("click", () => setMode(0.5, "short", shortBreak));
 
 // Long Break - 15 Minutes
 longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
