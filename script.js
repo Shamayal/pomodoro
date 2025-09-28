@@ -27,30 +27,32 @@ const modalBackdrop = document.getElementById("modal-backdrop");
 document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", () => {
     if ("Notification" in window && Notification.permission !== "granted") {
-      Notification.requestPermission();
+      Notification.requestPermission().then(permission => {
+        console.log("Notification permission:", permission);
+        if (permission === "granted") {
+          new Notification("✅ Notifications enabled!", {
+            body: "You'll now get timer alerts.",
+            icon: "favicon.ico"
+          });
+        } else {
+          console.warn("Notifications not allowed:", permission);
+        }
+      });
     }
   }, { once: true });
 });
 
-
+// Safe notification display
 function showNotification(title, body) {
-  if (Notification.permission === "granted") {
+  if ("Notification" in window && Notification.permission === "granted") {
     new Notification(title, {
-      body: body
-    });
-  }
-}
-
-Notification.requestPermission().then(permission => {
-  if (permission === "granted") {
-    new Notification("✅ It works!", {
-      body: "Notifications are enabled."
+      body: body,
+      icon: "favicon.ico"
     });
   } else {
-    console.log("Notifications denied or dismissed:", permission);
+    console.warn("No permission to show notification:", Notification.permission);
   }
-});
-
+}
 
 let countdown;
 let timeLeft = 25 * 60;
