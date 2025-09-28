@@ -6,6 +6,10 @@ const longBreak = document.getElementById("long-break");
 const start = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
 const progressBar = document.getElementById("progress-bar");
+// Timer Lengths 
+const pomodoroInput = document.getElementById("pomodoro-length");
+const shortInput = document.getElementById("short-length");
+const longInput = document.getElementById("long-length");
 // sound
 const clickSound = new Audio("sounds/click.wav");
 const modeSound = new Audio("sounds/mode.wav");
@@ -122,14 +126,23 @@ function updateProgressBar() {
   progressBar.style.width = `${percent}%`;
 }
 
-// Pomodoro - 25 Minutes
-pomodoro.addEventListener("click", () => setMode(25, "pomodoro", pomodoro));
+// Pomodoro - 25 Minutes Default
+pomodoro.addEventListener("click", () => {
+  const minutes = parseInt(pomodoroInput.value);
+  setMode(minutes, "pomodoro", pomodoro);
+});
 
-// Short Break - 5 Minutes
-shortBreak.addEventListener("click", () => setMode(5, "short", shortBreak));
+// Short Break - 5 Minutes Default
+shortBreak.addEventListener("click", () => {
+  const minutes = parseInt(shortInput.value);
+  setMode(minutes, "short", shortBreak);
+});
 
-// Long Break - 15 Minutes
-longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
+// Long Break - 15 Minutes Default
+longBreak.addEventListener("click", () => {
+  const minutes = parseInt(longInput.value);
+  setMode(minutes, "long", longBreak);
+});
 
 // Start Button
 start.addEventListener("click", toggleTimer);
