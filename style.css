@@ -31,7 +31,8 @@ title {
   margin: 0.3rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: background-color 1s ease, color 1s ease;
+
 }
 
 /* Hover Effect */
@@ -102,6 +103,7 @@ body.long #start {
   padding: 30px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: background-color 1s ease, color 1s ease;
 }
 
 body.pomodoro .timer-section {
@@ -145,7 +147,7 @@ body.long .timer-section {
   margin: 0.3rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background-color 1s ease, color 1s ease;
   display: flex;
   align-items: center;
   gap: 0.4rem; 
@@ -196,6 +198,7 @@ body.long .top-bar button {
   margin-top: 0;
   margin-bottom: 1.5rem;
   border-radius: 4px;
+  transition: background-color 1s ease, color 1s ease;
 }
 
 /* Progress Bar */
@@ -245,6 +248,11 @@ body.long .top-bar button {
 
 .dark-mode #progress-bar {
   background-color: #4caf50;
+}
+
+/* Transitioning Between Modes */
+body {
+  transition: background-color 1s ease, color 1s ease;
 }
 
 /* Settings */
