@@ -220,6 +220,26 @@ modalBackdrop.addEventListener("click", () => {
   modalBackdrop.classList.add("hidden");
 });
 
+// Function to enforce timer range
+function timerInput(minInput, min, max) {
+  minInput.addEventListener("input", () => {
+    const value = parseInt(minInput.value);
+
+    // If the input is not a number, skip
+    if (isNaN(value)) return;
+
+    if (value < min) {
+      minInput.value = min;
+    } else if (value > max) {
+      minInput.value = max;
+    }
+  });
+}
+
+timerInput(document.getElementById("pomodoro-length"), 1, 60);
+timerInput(document.getElementById("short-length"), 1, 60);
+timerInput(document.getElementById("long-length"), 1, 60);
+
 // Sound On/Off
 enableSoundBtn.innerHTML = soundOn
   ? 'Sound Off <i class="fa-solid fa-volume-xmark"></i>'
