@@ -132,6 +132,13 @@ pomodoro.addEventListener("click", () => {
   setMode(minutes, "pomodoro", pomodoro);
 });
 
+pomodoroInput.addEventListener("change", () => {
+  if (currentMode === "pomodoro") {
+    const minutes = parseInt(pomodoroInput.value);
+    setMode(minutes, "pomodoro", pomodoro);
+  }
+});
+
 // Short Break - 5 Minutes Default
 shortBreak.addEventListener("click", () => {
   const minutes = parseInt(shortInput.value);
