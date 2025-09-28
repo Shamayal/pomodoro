@@ -40,27 +40,26 @@
       <div id="settings-modal" class="modal hidden">
         <button id="close-settings">x</button>
         <h2>Settings</h2>
-        <div>
-          <label>
-            Pomodoro Length
-            <input
-              type="number" id="pomodoro-length" value="25" min="1" max="60" />
-            minutes
-          </label>
+        <div class="setting-row">
+          <span>Pomodoro Length</span>
+          <div class="input-group">
+            <input type="number" id="pomodoro-length" value="25" min="1" max="60" />
+            <span>minutes</span>
+          </div>
         </div>
-        <div>
-          <label>
-            Short Break
+        <div class="setting-row">
+          <span>Short Break</span>
+          <div class="input-group">
             <input type="number" id="short-length" value="5" min="1" max="60" />
-            minutes
-          </label>
+            <span>minutes</span>
+          </div>
         </div>
-        <div>
-          <label>
-            Long Break
+        <div class="setting-row">
+          <span>Long Break</span>
+          <div class="input-group">
             <input type="number" id="long-length" value="15" min="1" max="60" />
-            minutes
-          </label>
+            <span>minutes</span>
+          </div>
         </div>
         <div class="sound-toggle">
           <label for="sound-toggle">
