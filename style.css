@@ -396,3 +396,66 @@ body {
   background: #2c2c2c;
   color: #ddd;
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .timer {
+    font-size: 3.5rem;
+  }
+
+  .mode-buttons {
+    flex-direction: column;
+  }
+
+  .mode-buttons button {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .top-bar-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .top-bar button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .timer-section {
+    width: 100%;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+
+  .modal .setting-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .modal input[type="number"] {
+    width: 100%;
+  }
+
+  .progress-bar-container {
+    height: 4px;
+  }
+
+  #start {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
