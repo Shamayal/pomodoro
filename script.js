@@ -32,7 +32,6 @@ pomodoro.classList.add("active");
 function toggleTimer() {
   if (!timerRunning) {
     timerRunning = true;
-    //start.textContent = "Pause";
     start.innerHTML = 'Pause <i class="fa-solid fa-pause"></i>';
 
     countdown = setInterval(() => {
