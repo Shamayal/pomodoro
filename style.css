@@ -50,7 +50,6 @@ title {
 /* Start button */
 #start {
   background-color: white;
-  /* color: #d95550; */
   font-size: 1.2rem;
   font-weight: bold;
   padding: 0.8rem 2rem;
@@ -263,12 +262,31 @@ body {
   transform: translate(-50%, -50%);
   background: white;
   color: black;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  width: 340px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: 300px;
+  width: 350px;
   max-width: 90%;
+  transition: all 0.3s ease;
+}
+
+.modal h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.modal label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f4f4f4;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
 }
 
 /* Dark mode modal styles */
