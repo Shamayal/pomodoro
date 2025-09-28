@@ -11,6 +11,7 @@ const clickSound = new Audio("sounds/click.wav");
 const modeSound = new Audio("sounds/mode.wav");
 const alarmSound = new Audio("sounds/alarm.wav");
 const lightSound = new Audio("sounds/light_switch.wav");
+const settingsSound = new Audio("sounds/settings.wav");
 const enableSoundBtn = document.getElementById("sound-toggle-btn");
 // dark mode
 const darkModeToggleBtn = document.getElementById("dark-mode-toggle");
@@ -171,6 +172,7 @@ darkModeToggleBtn.addEventListener("click", toggleDarkMode);
 settingsButton.addEventListener("click", () => {
   settingsModal.classList.remove("hidden");
   modalBackdrop.classList.remove("hidden");
+  settingsSound.play();
 });
 
 closeSettingsBtn.addEventListener("click", () => {
