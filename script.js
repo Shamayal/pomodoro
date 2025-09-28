@@ -66,7 +66,7 @@ function toggleTimer() {
         document.title = "Time's up! - Pomodoro";
         start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
         updateProgressBar();
-        alarmSound.play();
+        if (soundOn) alarmSound.play();
         alert("Time's up!");
         return;
       }
@@ -171,13 +171,13 @@ start.addEventListener("click", toggleTimer);
 // Sounds
 [start].forEach((button) => {
   button.addEventListener("click", () => {
-    clickSound.play();
+    if (soundOn) clickSound.play();
   });
 });
 
 [pomodoro, shortBreak, longBreak].forEach((button) => {
   button.addEventListener("click", () => {
-    modeSound.play();
+    if (soundOn) modeSound.play();
   });
 });
 
@@ -185,7 +185,7 @@ start.addEventListener("click", toggleTimer);
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
 
-  lightSound.play();
+  if (soundOn) lightSound.play();
 
   const isDark = document.body.classList.contains("dark-mode");
 
@@ -206,7 +206,7 @@ darkModeToggleBtn.addEventListener("click", toggleDarkMode);
 settingsButton.addEventListener("click", () => {
   settingsModal.classList.remove("hidden");
   modalBackdrop.classList.remove("hidden");
-  settingsSound.play();
+  if (soundOn) settingsSound.play();
 });
 
 closeSettingsBtn.addEventListener("click", () => {
