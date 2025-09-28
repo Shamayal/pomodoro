@@ -93,6 +93,10 @@ function setMode(minutes, mode, activeButton) {
   const mins = minutes.toString().padStart(2, "0");
   timerDisplay.textContent = `${mins}:00`;
 
+  // Update Title
+  timerDisplay.textContent = formatTime(timeLeft);
+  document.title = `${formatTime(timeLeft)} - ${formatModeTitle(mode)}`;
+
   // Reset progress bar
   updateProgressBar();
 
