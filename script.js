@@ -24,9 +24,14 @@ const closeSettingsBtn = document.getElementById("close-settings");
 const modalBackdrop = document.getElementById("modal-backdrop");
 
 // Permission to Add Notifications
-if ("Notification" in window && Notification.permission !== "granted") {
-  Notification.requestPermission();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.addEventListener("click", () => {
+    if ("Notification" in window && Notification.permission !== "granted") {
+      Notification.requestPermission();
+    }
+  }, { once: true });
+});
+
 
 function showNotification(title, body) {
   if (Notification.permission === "granted") {
@@ -37,7 +42,16 @@ function showNotification(title, body) {
   }
 }
 
-Notification.requestPermission().then(console.log);
+Notification.requestPermission().then(permission => {
+  if (permission === "granted") {
+    new Notification("✅ It works!", {
+      body: "Notifications are enabled.",
+      icon: "https://via.placeholder.com/64"
+    });
+  } else {
+    console.log("Notifications denied or dismissed:", permission);
+  }
+});
 
 
 let countdown;
