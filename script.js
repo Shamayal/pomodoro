@@ -10,16 +10,16 @@ const progressBar = document.getElementById("progress-bar");
 const pomodoroInput = document.getElementById("pomodoro-length");
 const shortInput = document.getElementById("short-length");
 const longInput = document.getElementById("long-length");
-// sound
+// Sound
 const clickSound = new Audio("sounds/click.wav");
 const modeSound = new Audio("sounds/mode.wav");
 const alarmSound = new Audio("sounds/alarm.wav");
 const lightSound = new Audio("sounds/light_switch.wav");
 const settingsSound = new Audio("sounds/settings.wav");
 const enableSoundBtn = document.getElementById("sound-toggle-btn");
-// dark mode
+// Dark Mode
 const darkModeToggleBtn = document.getElementById("dark-mode-toggle");
-// settings modal
+// Settings Modal
 const closeSettingsBtn = document.getElementById("close-settings");
 const modalBackdrop = document.getElementById("modal-backdrop");
 
