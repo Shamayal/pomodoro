@@ -23,6 +23,23 @@ const darkModeToggleBtn = document.getElementById("dark-mode-toggle");
 const closeSettingsBtn = document.getElementById("close-settings");
 const modalBackdrop = document.getElementById("modal-backdrop");
 
+// Permission to Add Notifications
+if ("Notification" in window && Notification.permission !== "granted") {
+  Notification.requestPermission();
+}
+
+function showNotification(title, body) {
+  if (Notification.permission === "granted") {
+    new Notification(title, {
+      body: body, 
+      icon: "favicon.ico",
+    });
+  }
+}
+
+Notification.requestPermission().then(console.log);
+
+
 let countdown;
 let timeLeft = 25 * 60;
 let totalTime = 25 * 60;
@@ -67,6 +84,7 @@ function toggleTimer() {
         start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
         updateProgressBar();
         if (soundOn) alarmSound.play();
+        showNotification("⏱️ Time's Up!", `Your ${formatModeTitle(currentMode)} is over!`);
         alert("Time's up!");
         return;
       }
