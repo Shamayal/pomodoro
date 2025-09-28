@@ -24,15 +24,15 @@ let totalTime = 25 * 60;
 let timerRunning = false;
 let currentMode = "pomodoro"; // default mode
 
-timerDisplay.textContent = "25:00";
-document.body.className = "pomodoro";
-pomodoro.classList.add("active");
-
 function formatTime(secondsLeft) {
   const minutes = Math.floor(secondsLeft / 60);
   const seconds = secondsLeft % 60;
   return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
+
+timerDisplay.textContent = formatTime(timeLeft);
+document.body.className = "pomodoro";
+pomodoro.classList.add("active");
 
 function formatModeTitle(mode) {
   switch (mode) {
@@ -56,8 +56,8 @@ function toggleTimer() {
       if (timeLeft <= 0) {
         clearInterval(countdown);
         timerRunning = false;
-        // timerDisplay.textContent = "00:00";
         timeLeft = totalTime;
+        timerDisplay.textContent = formatTime(timeLeft);
         document.title = "Time's up! - Pomodoro";
         start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
         updateProgressBar();
@@ -94,7 +94,6 @@ function setMode(minutes, mode, activeButton) {
   timerDisplay.textContent = `${mins}:00`;
 
   // Update Title
-  timerDisplay.textContent = formatTime(timeLeft);
   document.title = `${formatTime(timeLeft)} - ${formatModeTitle(mode)}`;
 
   // Reset progress bar
@@ -126,7 +125,7 @@ function updateProgressBar() {
 pomodoro.addEventListener("click", () => setMode(25, "pomodoro", pomodoro));
 
 // Short Break - 5 Minutes
-shortBreak.addEventListener("click", () => setMode(0.5, "short", shortBreak));
+shortBreak.addEventListener("click", () => setMode(5, "short", shortBreak));
 
 // Long Break - 15 Minutes
 longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
