@@ -241,6 +241,14 @@ timerInput(document.getElementById("short-length"), 1, 60);
 timerInput(document.getElementById("long-length"), 1, 60);
 
 // Sound On/Off
-enableSoundBtn.innerHTML = soundOn
-  ? 'Sound Off <i class="fa-solid fa-volume-xmark"></i>'
-  : 'Sound On <i class="fa-solid fa-volume-high"></i>';
+let soundOn = true;
+function updateSoundButton() {
+  enableSoundBtn.innerHTML = soundOn
+  ? '<i class="fa-solid fa-volume-high"></i>'
+  : '<i class="fa-solid fa-volume-xmark"></i>';
+}
+
+enableSoundBtn.addEventListener("click", () => {
+  soundOn = !soundOn;
+  updateSoundButton();
+})
