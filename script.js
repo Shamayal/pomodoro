@@ -39,6 +39,7 @@ function toggleTimer() {
         clearInterval(countdown);
         timerRunning = false;
         timerDisplay.textContent = "00:00";
+        document.title = "Time's up! - Pomodoro";
         start.innerHTML = 'Start <i class="fa-solid fa-play"></i>';
         updateProgressBar();
         alarmSound.play();
