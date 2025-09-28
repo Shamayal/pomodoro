@@ -7,9 +7,11 @@ const start = document.getElementById("start");
 const timerDisplay = document.querySelector(".timer");
 const progressBar = document.getElementById("progress-bar");
 // sound
-const clickSound = new Audio('sounds/click.wav');
-const modeSound = new Audio('sounds/mode.wav');
-const alarmSound = new Audio('sounds/alarm.wav');
+const clickSound = new Audio("sounds/click.wav");
+const modeSound = new Audio("sounds/mode.wav");
+const alarmSound = new Audio("sounds/alarm.wav");
+const lightSound = new Audio("sounds/light_switch.wav");
+const enableSoundBtn = document.getElementById("sound-toggle-btn");
 // dark mode
 const darkModeToggleBtn = document.getElementById("dark-mode-toggle");
 // settings modal
@@ -54,7 +56,7 @@ function toggleTimer() {
         .toString()
         .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
-        updateProgressBar();
+      updateProgressBar();
     }, 1000);
   } else {
     clearInterval(countdown);
@@ -88,7 +90,7 @@ function setMode(minutes, mode, activeButton) {
   }
 
   // Reset active button styles
-  document.querySelectorAll(".mode-buttons button").forEach(btn => {
+  document.querySelectorAll(".mode-buttons button").forEach((btn) => {
     btn.classList.remove("active");
   });
 
@@ -114,13 +116,13 @@ longBreak.addEventListener("click", () => setMode(15, "long", longBreak));
 start.addEventListener("click", toggleTimer);
 
 // Sounds
-[start].forEach(button => {
+[start].forEach((button) => {
   button.addEventListener("click", () => {
     clickSound.play();
   });
 });
 
-[pomodoro, shortBreak, longBreak].forEach(button => {
+[pomodoro, shortBreak, longBreak].forEach((button) => {
   button.addEventListener("click", () => {
     modeSound.play();
   });
@@ -129,6 +131,8 @@ start.addEventListener("click", toggleTimer);
 // Dark Mode
 function toggleDarkMode() {
   document.body.classList.toggle("dark-mode");
+
+  lightSound.play();
 
   const isDark = document.body.classList.contains("dark-mode");
 
@@ -161,3 +165,8 @@ modalBackdrop.addEventListener("click", () => {
   settingsModal.classList.add("hidden");
   modalBackdrop.classList.add("hidden");
 });
+
+// Sound On/Off
+enableSoundBtn.innerHTML = soundOn
+  ? 'Sound Off <i class="fa-solid fa-volume-xmark"></i>'
+  : 'Sound On <i class="fa-solid fa-volume-high"></i>';
